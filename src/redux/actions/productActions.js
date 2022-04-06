@@ -22,7 +22,7 @@ export function updateProductSuccess(product) {
 }
 
 export function saveProductApi(product) {
-    return fetch("https://localhost:3000/products/" + (product.id || ''),
+    return fetch("http://localhost:3000/products/" + (product.id || ''),
         {
             method: product.id ? "PUT" : "POST",
             headers: { "content-type": "application/json" },

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import { Collapse, Nav, Navbar, NavbarBrand, NavbarText, NavbarToggler, NavItem, NavLink, } from 'reactstrap'
 import CartSummary from "../cart/CartSummary";
 
@@ -7,21 +8,20 @@ export default class Navi extends Component {
     return (
       <div>
         <Navbar color="light" expand="md" light>
-          <NavbarBrand href="/">
-            reactstrap
-          </NavbarBrand>
+          <Link to="/">
+            <NavbarBrand>
+              Nothwind Mağazası
+            </NavbarBrand>
+          </Link>
           <NavbarToggler onClick={function noRefCheck() { }} />
           <Collapse navbar>
             <Nav className="me-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">
-                  Components
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="">
-                  GitHub
-                </NavLink>
+                <Link to="/saveproduct/">
+                  <NavLink>
+                    Ürün Ekle
+                  </NavLink>
+                </Link>
               </NavItem>
               <CartSummary />
             </Nav>
